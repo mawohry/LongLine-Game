@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "header.h"
 
- char Board[4][4]; 
- char PlayerOneName[]; 
- char PlayerTwoName[]; 
+ char Board[10]; 
+ char PlayerOneName[30]; 
+ char PlayerTwoName[30]; 
  float PlayerOneScore; 
  float PlayerTwoScore; 
  int Cell;  
@@ -24,4 +24,3 @@ int main(int argc, char *argv[])
   system("PAUSE");	
   return 0;
 }
-
