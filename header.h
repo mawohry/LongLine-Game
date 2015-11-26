@@ -12,6 +12,7 @@ char GetWhoStarts();
 int are_same (int x, int y, int z, char p,char Board[]);
 
 int has_won(char p, char Board[]);  /* true if player p has won game */
+int play(char p);
 
 #endif // HEADER_H_
 
