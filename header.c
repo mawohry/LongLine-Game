@@ -15,3 +15,23 @@ int has_won(char p, char Board[]) {  /* true if player p has won game */
        are_same(1, 5, 9, p, Board) || are_same(3, 5, 7, p, Board));
     return i;
 }
+void show_grid()
+{
+    int i;
+    printf("\n+-----------+\n");
+    printf("|");
+    for(i= 1; i<=9; i++)
+      {
+          printf(" %c |",grid[i]);
+          if(i%3==0)
+          {
+               printf("\n");
+               printf("+-----------+\n");
+               if(i<9)
+               {
+                  printf("|");
+               }
+          }   
+      }
+    return;
+} 
