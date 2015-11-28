@@ -15,6 +15,11 @@ int has_won(char p, char Board[]) {  /* true if player p has won game */
        are_same(1, 5, 9, p, Board) || are_same(3, 5, 7, p, Board));
     return i;
 }
+void GetMoveCoordinates(int* Cell)
+  {
+    printf("\nEnter the cell (1-9) for your token: ");
+    scanf("%i",&c);
+ } 
 void show_grid()
 {
     int i;
