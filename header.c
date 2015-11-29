@@ -40,3 +40,21 @@ void show_grid()
       }
     return;
 } 
+
+void play_human(char p) {  /* human player's turn */
+   int pos = 0;
+  printf("\nPlayer %c: Give grid position (1-9) for your token: ", p);
+  do{
+    scanf("%d", &pos);
+    if ((pos < 1) || (9 < pos)) 
+      printf("\nSORRY: Position %1d is invalid; please give number in rage 1 - 9: ", pos);
+    else if (grid[pos] != BLANK)
+      {printf("\nSORRY: Position %1d is occupied; please another position: ", pos);  pos = 10;}
+    else {
+      grid[pos] = p;/* mark cell with letter of p */
+      --grid_blanks;/* decrement count of blank cells */
+    }
+    fflush(stdout);
+  }while ((pos < 1) || (9 < pos));
+return;
+}
