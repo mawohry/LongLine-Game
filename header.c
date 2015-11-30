@@ -58,3 +58,23 @@ void play_human(char p) {  /* human player's turn */
   }while ((pos < 1) || (9 < pos));
 return;
 }
+
+/* machine player's turn */
+void play_machine(char p) {
+  int pos = 0;
+  if (grid_blanks <= 0) {
+    printf("\nUNEXPECTED PROBLEM: no free grid cell; player turn ignored\n"); 
+    fflush(stdout);
+    return; /* no grid cell available to use; return */
+  }
+  printf("\nPlayer %c: Give grid position (1-9) for your token: ", p);  fflush(stdout);
+  do {
+    grid_rand = rand();//pos + (grid_rand % 443); /* generate a random no */
+    pos = (grid_rand % 9) + 1;/* ensure in range 1 - 9 */
+    //printf("\n%d",pos);
+  } while (((pos < 1) || (9 < pos)) || (grid[pos] != BLANK));
+  printf("%1d\n", pos); /* display position selected */
+  grid[pos] = p; /* mark cell with letter of p */
+  --grid_blanks; /* decrement count of blank cells */
+  return ;
+}
